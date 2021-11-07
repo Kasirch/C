@@ -1,0 +1,19 @@
+#include<windows.h>
+
+int main(int argc,char **argv)
+{
+	HWND hWnd;
+	hWnd=FindWindow(0,argv[0]);
+	ShowWindow(hWnd,SW_HIDE);
+	int a;
+	a=MessageBox(0,"你喜欢我嘛？","消息",MB_YESNO);
+	if(a==IDNO)
+	{
+		do
+		{
+			a=MessageBox(0,"你真的不喜欢我嘛？","消息",MB_YESNO);
+		}while(a==IDYES);
+	}
+	MessageBox(0,"我也喜欢你","消息",MB_OK);
+	return 0;
+}
