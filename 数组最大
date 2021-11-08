@@ -1,0 +1,22 @@
+输入5个100以内的整数，用数组存储，然后找出其中值最大的，并输出最大值及其下标。
+
+#include <stdio.h>
+int main()
+{
+	int a[5],i;
+	for(i=0;i<=4;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	int max=0,p;
+	for(i=0;i<=4;i++)
+	{
+		if(a[i]>max)
+		{
+			max=a[i];
+			p=i;
+		}
+	}
+	printf("max=%d,p=%d",max,p);
+	return 0;
+}
