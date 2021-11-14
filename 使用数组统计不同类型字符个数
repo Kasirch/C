@@ -1,0 +1,37 @@
+有一篇文章，共有3行文字，每行有个80字符。要求分别统计出其中英文大写字母、小写字母、空格以及其它字符的个数。  
+
+输入：
+I am a student.
+123456
+ASDFG
+
+输出：
+upper low   digit space other
+6     10    6     3     1
+
+
+#include<stdio.h>
+int main()
+{
+	int i,j;
+	char a[3][80];
+	int upper,low,digit,space,other; 
+	for(i=0;i<3;i++)
+	{
+		gets(a[i]);
+	}
+	for(i=0;i<3;i++)
+	{
+		for(j=0;a[i][j]!='\0';j++)
+		{
+			if(a[i][j]>='A'&&a[i][j]<='Z') upper++;
+			else if(a[i][j]>='a'&&a[i][j]<='z') low++;
+			else if(a[i][j]>='0'&&a[i][j]<='9') digit++;
+			else if(a[i][j]==' ') space++;
+			else other++;
+		}
+	}
+	printf("upper low   digit space other \n%-6d%-6d%-6d%-6d%-6d"
+	,upper,low,digit,space,other);
+	return 0;
+}
